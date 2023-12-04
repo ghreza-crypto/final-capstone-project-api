@@ -15,7 +15,7 @@ class Users::SessionsController < Devise::SessionsController
 
   private 
 
-  
+
   def handle_username_authentication
     resource = User.find_for_database_authentication(username: params[:user][:username])
     if resource && resource.valid_password?
@@ -25,7 +25,7 @@ class Users::SessionsController < Devise::SessionsController
       render json: { message: 'Invalid username or password' }, status: :unauthorized
     end
   end
-
+  
   def respond_with(resource, options={})
     render json: {
       status: { code: 200, message: "Signed In Successfully", data: current_user }},
@@ -48,5 +48,4 @@ class Users::SessionsController < Devise::SessionsController
         status: :unauthorized
     end
   end
-
 end
