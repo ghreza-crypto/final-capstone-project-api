@@ -1,0 +1,14 @@
+{
+  "sqltools.connections": [
+    {
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 5432,
+      "askForPassword": true,
+      "driver": "PostgreSQL",
+      "name": "inal_capstone_project_api_development",
+      "database": "final_capstone_project_api_development",
+      "username": "postgres"
+    }
+  ]
+}

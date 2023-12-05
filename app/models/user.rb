@@ -6,15 +6,13 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
          :jwt_authenticatable, jwt_revocation_strategy: self
-         
-  def jwt_payload
-    super
-  end
+
+  has_many :cars
 
   def self.find_for_database_authentication(warden_conditions)
     conditions = warden_conditions.dup
-    if login = conditions.delete(:username)
-      where(conditions.to_h).where(["lower(username) = :value", { :value => login.downcase }]).first
+    if (login = conditions.delete(:username))
+      where(conditions.to_h).where(['lower(username) = :value', { value: login.downcase }]).first
     else
       where(conditions.to_h).first
     end
@@ -23,5 +21,4 @@ class User < ApplicationRecord
   def valid_password?
     true
   end
-
 end

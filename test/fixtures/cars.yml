@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  photo: MyString
+  model: MyString
+  description: MyString
+  finance_fee: 1
+  purchase_fee: 1
+  amount_payable: 1
+  duration: MyString
+  apr: MyString
+  user: one
+
+two:
+  photo: MyString
+  model: MyString
+  description: MyString
+  finance_fee: 1
+  purchase_fee: 1
+  amount_payable: 1
+  duration: MyString
+  apr: MyString
+  user: two
