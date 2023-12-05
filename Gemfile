@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 source 'https://rubygems.org'
 
 ruby '3.2.2'
@@ -49,4 +47,4 @@ end
 
 gem 'devise'
 gem 'devise-jwt'
-gem 'rubocop', '>= 1.0', '< 2.0'
+gem 'rubocop'
