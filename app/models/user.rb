@@ -8,6 +8,7 @@ class User < ApplicationRecord
          :jwt_authenticatable, jwt_revocation_strategy: self
 
   has_many :cars
+  has_many :reservations
 
   def self.find_for_database_authentication(warden_conditions)
     conditions = warden_conditions.dup
