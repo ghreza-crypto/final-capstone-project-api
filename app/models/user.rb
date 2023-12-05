@@ -9,8 +9,6 @@ class User < ApplicationRecord
 
   has_many :cars
 
-
-
   def self.find_for_database_authentication(warden_conditions)
     conditions = warden_conditions.dup
     if (login = conditions.delete(:username))
