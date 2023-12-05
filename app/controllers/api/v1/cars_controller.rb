@@ -11,7 +11,16 @@ class Api::V1::CarsController < ApiController
         render json: @car, status: :ok
     end
 
-
+    def create
+        @car = current_user.cars.new(car_params)
+        if @car.save
+            render json: @car, status: :ok
+        else
+            render json: {
+                status: "failed", data: @car.errors.full_messages
+            }, status: :unprocessable_entity
+        end
+    end
 
     def destroy
         @car = Car.find(params[:id])
