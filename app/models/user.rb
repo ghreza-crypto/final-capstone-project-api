@@ -10,6 +10,11 @@ class User < ApplicationRecord
   has_many :cars
   has_many :reservations
 
+  validates :role, presence: true
+  validates :username, presence: true, uniqueness: true
+
+  attribute :role, :string, default: 'user'
+
   def self.find_for_database_authentication(warden_conditions)
     conditions = warden_conditions.dup
     if (login = conditions.delete(:username))
@@ -21,5 +26,13 @@ class User < ApplicationRecord
 
   def valid_password?
     true
+  end
+
+  def user?
+    role == 'user'
+  end
+
+  def admin?
+    role == 'admin'
   end
 end
