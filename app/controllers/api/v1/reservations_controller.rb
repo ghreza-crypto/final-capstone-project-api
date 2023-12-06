@@ -1,11 +1,11 @@
 module Api
   module V1
     class ReservationsController < ApiController
-      before_action :set_reservation, only: %i[show destroy]
+      before_action :set_reservation, only: %i[destroy]
 
       # GET /reservations
       def index
-        @reservations = Reservation.all
+        @reservations = current_user.reservations
 
         render json: @reservations
       end
@@ -17,18 +17,23 @@ module Api
 
       # POST /reservations
       def create
-        @reservation = Reservation.new(reservation_params)
+        @car = Car.find(params[:car_id])
+        if @car.nil?
+          render json: { error: 'Car not found' }, status: :not_found
+          return
+        end
 
-        @reservation.user_id = current_user.id if current_user
+        @reservation = current_user.reservations.new(reservation_params)
+        @reservation.car_id = @car.id
 
         if @reservation.save
-          render json: @reservation, status: :created, location: @reservation
+          render json: @reservation, status: :ok
         else
-          render json: @reservation.errors, status: :unprocessable_entity
+          render json: @reservation.errors.full_messages, status: :unprocessable_entity
         end
       end
 
-      # DELETE /reservations/1
+      # DELETE /reservations/
       def destroy
         if @reservation.destroy
           render json: { success: true, message: 'Reservation deleted' }
@@ -46,7 +51,7 @@ module Api
 
       # Only allow a list of trusted parameters through.
       def reservation_params
-        params.require(:reservation).permit(:user_id, :car_id, :date, :city)
+        params.require(:reservation).permit(:date, :city)
       end
     end
   end
