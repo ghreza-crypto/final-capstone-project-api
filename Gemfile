@@ -45,6 +45,7 @@ group :development do
   # gem "spring"
 end
 
+gem 'cancancan'
 gem 'devise'
 gem 'devise-jwt'
 gem 'rubocop'
