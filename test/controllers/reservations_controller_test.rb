@@ -27,13 +27,21 @@ class ReservationsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should show reservation' do
-    get reservation_url(@reservation), as: :json
+    get reservation_url(@reservation),
+    as: :json
     assert_response :success
   end
 
   test 'should update reservation' do
     patch reservation_url(@reservation),
-          params: { reservation: { car_id: @reservation.car_id, city: @reservation.city, date: @reservation.date, user_id: @reservation.user_id } }, as: :json
+          params: {
+            reservation: {
+              car_id: @reservation.car_id,
+              city: @reservation.city,
+              date: @reservation.date,
+              user_id: @reservation.user_id
+            }
+          }, as: :json
     assert_response :success
   end
 
