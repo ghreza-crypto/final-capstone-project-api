@@ -1,45 +1,44 @@
 module Api
   module V1
-  class ReservationsController < ApiController
-    before_action :set_reservation, only: %i[ show destroy ]
+    class ReservationsController < ApiController
+      before_action :set_reservation, only: %i[show destroy]
 
-    # GET /reservations
-    def index
-      @reservations = Reservation.all
+      # GET /reservations
+      def index
+        @reservations = Reservation.all
 
-      render json: @reservations
-    end
-
-    # GET /reservations/1
-    def show
-      render json: @reservation
-    end
-
-    # POST /reservations
-    def create
-      @reservation = Reservation.new(reservation_params)
-
-      if current_user
-          @reservation.user_id = current_user.id
+        render json: @reservations
       end
 
-      if @reservation.save
-        render json: @reservation, status: :created, location: @reservation
-      else
-        render json: @reservation.errors, status: :unprocessable_entity
+      # GET /reservations/1
+      def show
+        render json: @reservation
       end
-    end
 
-    # DELETE /reservations/1
-    def destroy
-      if @reservation.destroy
-        render json: { success: true, message: 'Reservation deleted' }
-      else
-        render json: { success: false, errors: @reservation.errors.full_messages }, status: :unprocessable_entity
+      # POST /reservations
+      def create
+        @reservation = Reservation.new(reservation_params)
+
+        @reservation.user_id = current_user.id if current_user
+
+        if @reservation.save
+          render json: @reservation, status: :created, location: @reservation
+        else
+          render json: @reservation.errors, status: :unprocessable_entity
+        end
       end
-    end
 
-    private
+      # DELETE /reservations/1
+      def destroy
+        if @reservation.destroy
+          render json: { success: true, message: 'Reservation deleted' }
+        else
+          render json: { success: false, errors: @reservation.errors.full_messages }, status: :unprocessable_entity
+        end
+      end
+
+      private
+
       # Use callbacks to share common setup or constraints between actions.
       def set_reservation
         @reservation = Reservation.find(params[:id])
@@ -52,4 +51,3 @@ module Api
     end
   end
 end
-
