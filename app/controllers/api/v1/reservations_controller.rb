@@ -5,9 +5,12 @@ module Api
 
       # GET /reservations
       def index
-        @reservations = current_user.reservations
-
-        render json: @reservations
+        @reservations = Reservation.accessible_by(current_ability)
+        if @reservations.empty?
+          render json: { status: 'No reservation found' }, status: :not_found
+        else
+          render json: @reservations, status: :ok
+        end
       end
 
       # GET /reservations/1
@@ -18,18 +21,14 @@ module Api
       # POST /reservations
       def create
         @car = Car.find(params[:car_id])
-        if @car.nil?
-          render json: { error: 'Car not found' }, status: :not_found
-          return
-        end
-
         @reservation = current_user.reservations.new(reservation_params)
         @reservation.car_id = @car.id
 
-        if @reservation.save
+        # Check if the user has the ability to create a reservation
+        if can?(:create, @reservation) && @reservation.save
           render json: @reservation, status: :ok
         else
-          render json: @reservation.errors.full_messages, status: :unprocessable_entity
+          render json: { error: 'Unauthorized to create reservation' }, status: :forbidden
         end
       end
 

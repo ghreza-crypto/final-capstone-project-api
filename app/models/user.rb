@@ -13,13 +13,15 @@ class User < ApplicationRecord
   validates :role, presence: true
   validates :username, presence: true, uniqueness: true
 
-  ROLES = %w[admin user]
+  attribute :role, :string, default: 'user'
 
-  ROLES.each do |role_name|
-    define_method "#{role_name}?" do
-      role == role_name
-    end
-  end
+  # ROLES = %w[admin user].freeze
+
+  # ROLES.each do |role_name|
+  #   define_method "#{role_name}?" do
+  #     role == role_name
+  #   end
+  # end
 
   def self.find_for_database_authentication(warden_conditions)
     conditions = warden_conditions.dup
@@ -32,5 +34,13 @@ class User < ApplicationRecord
 
   def valid_password?
     true
+  end
+
+  def user?
+    role == 'user'
+  end
+
+  def admin?
+    role == 'admin'
   end
 end
