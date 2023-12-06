@@ -13,7 +13,14 @@ class ReservationsControllerTest < ActionDispatch::IntegrationTest
   test 'should create reservation' do
     assert_difference('Reservation.count') do
       post reservations_url,
-           params: { reservation: { car_id: @reservation.car_id, city: @reservation.city, date: @reservation.date, user_id: @reservation.user_id } }, as: :json
+           params: {
+            reservation: {
+            car_id: @reservation.car_id,
+            city: @reservation.city,
+            date: @reservation.date,
+            user_id: @reservation.user_id
+          }
+        }, as: :json
     end
 
     assert_response :created

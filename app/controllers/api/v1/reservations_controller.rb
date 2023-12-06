@@ -29,15 +29,6 @@ module Api
       end
     end
 
-    # PATCH/PUT /reservations/1
-    # def update
-    #   if @reservation.update(reservation_params)
-    #     render json: @reservation
-    #   else
-    #     render json: @reservation.errors, status: :unprocessable_entity
-    #   end
-    # end
-
     # DELETE /reservations/1
     def destroy
       if @reservation.destroy
