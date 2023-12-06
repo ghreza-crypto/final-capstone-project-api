@@ -21,6 +21,7 @@ module Api
 
       if current_user
           @reservation.user_id = current_user.id
+      end
 
       if @reservation.save
         render json: @reservation, status: :created, location: @reservation
@@ -51,4 +52,4 @@ module Api
     end
   end
 end
-end
+

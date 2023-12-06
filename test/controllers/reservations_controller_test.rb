@@ -14,13 +14,13 @@ class ReservationsControllerTest < ActionDispatch::IntegrationTest
     assert_difference('Reservation.count') do
       post reservations_url,
            params: {
-            reservation: {
-            car_id: @reservation.car_id,
-            city: @reservation.city,
-            date: @reservation.date,
-            user_id: @reservation.user_id
-          }
-        }, as: :json
+             reservation: {
+               car_id: @reservation.car_id,
+               city: @reservation.city,
+               date: @reservation.date,
+               user_id: @reservation.user_id
+             }
+           }, as: :json
     end
 
     assert_response :created
@@ -28,7 +28,7 @@ class ReservationsControllerTest < ActionDispatch::IntegrationTest
 
   test 'should show reservation' do
     get reservation_url(@reservation),
-    as: :json
+        as: :json
     assert_response :success
   end
 
