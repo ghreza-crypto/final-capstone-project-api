@@ -15,7 +15,11 @@ class User < ApplicationRecord
 
   ROLES = %w[admin user]
 
-
+  ROLES.each do |role_name|
+    define_method "#{role_name}?" do
+      role == role_name
+    end
+  end
 
   def self.find_for_database_authentication(warden_conditions)
     conditions = warden_conditions.dup
