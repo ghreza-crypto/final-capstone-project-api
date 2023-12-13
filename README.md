@@ -163,8 +163,9 @@ Not implemented tests
 
 👤 **Ali Bello**
 
-- GitHub: [@Ali](https://github.com/devalibello)
-
+- GitHub: [@githubhandle](https://github.com/devalibello)
+- Twitter: [@twitterhandle](https://twitter.com/i_am_aalee)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/ali-bello-imoukhuede/)
 
 👤 **Benson Kiai**
 
