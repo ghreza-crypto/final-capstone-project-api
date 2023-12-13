@@ -46,7 +46,7 @@ RSpec.describe 'users/registrations', type: :request do
     end
   end
 
-  path '/users' do
+  path '/users' do # rubocop:disable Metrics/BlockLength
     patch('update registration') do
       response(200, 'successful') do
         after do |example|
