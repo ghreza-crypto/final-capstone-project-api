@@ -1,7 +1,6 @@
 require 'swagger_helper'
 
 RSpec.describe 'api/v1/reservations', type: :request do
-
   path '/api/v1/cars/{car_id}/reservations' do
     # You'll want to customize the parameter types...
     parameter name: 'car_id', in: :path, type: :string, description: 'car_id'

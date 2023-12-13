@@ -46,10 +46,10 @@ group :development do
   # gem "spring"
 end
 
-  gem 'rswag'
-  gem 'rswag-api'
-  gem 'rswag-ui'
-  gem 'cancancan'
-  gem 'devise'
-  gem 'devise-jwt'
-  gem 'rubocop'
+gem 'cancancan'
+gem 'devise'
+gem 'devise-jwt'
+gem 'rswag'
+gem 'rswag-api'
+gem 'rswag-ui'
+gem 'rubocop'
