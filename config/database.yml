@@ -30,7 +30,7 @@ development:
   username: postgres
 
   # The password associated with the PostgreSQL role (username).
-  password: mascotss
+  password: BKIAI
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
@@ -55,7 +55,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: final_capstone_project_api_test
+  database: final_capstone_project_api_development
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
