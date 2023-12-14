@@ -132,15 +132,16 @@ To run the project follow these steps :
 1. Run the server :
    1. Open your terminal and navigate to the root directory of your project
    2. Run `bundle install`
-   3. Run `EDITOR="code --wait" rails credentials:edit`
-   4. Run `rails db:create db:migrate`
-   5. Run ```$ rails server```
-   6. open your navigator
-   7. Go to ```http://localhost:3000/```
-   8. If you receive an authentication error
-   9. Delete your `credential.yml` file
-   10. Run `rails credentials:edit`
-   11. Run ```$ rails server``` again
+   3. Remove config/master.key and config/credentials.yml.enc if they exist.
+   4. Run `EDITOR="code --wait" rails credentials:edit`
+   5. Run `rails db:create db:migrate`
+   6. Run ```$ rails server```
+   7. open your navigator
+   8. Go to ```http://localhost:3000/```
+   9. If you receive an authentication error
+   10. Delete your `credential.yml` file
+   11. Run `rails credentials:edit`
+   12. Run ```$ rails server``` again
 2. Run the front-end :
    1. Run the command ```$npm start ``` in your terminal.
    2. Your default browser should open automatically and display your React app
