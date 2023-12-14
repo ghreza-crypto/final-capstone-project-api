@@ -20,9 +20,9 @@ module Api
 
       # POST /reservations
       def create
-        @car = Car.find(params[:car_id])
+        # @car = Car.find(params[:car_id])
         @reservation = current_user.reservations.new(reservation_params)
-        @reservation.car_id = @car.id
+        # @reservation.car_id = @car.id
 
         # Check if the user has the ability to create a reservation
         if can?(:create, @reservation) && @reservation.save
@@ -50,7 +50,7 @@ module Api
 
       # Only allow a list of trusted parameters through.
       def reservation_params
-        params.require(:reservation).permit(:date, :city)
+        params.require(:reservation).permit(:date, :city, :car_id, :user_id)
       end
     end
   end
