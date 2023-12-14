@@ -1,0 +1,386 @@
+openapi: 3.0.3
+info:
+  title: API V1
+  version: v1
+paths:
+  "/api/v1/cars":
+    get:
+      summary: list cars
+      tags:
+        - Car
+      security:
+        - BearerAuth: []
+      responses:
+        "200":
+          description: successful
+          content:
+            application/json:
+              example:
+                - id: 1
+                  photo: "car1.jpg"
+                  model: "Sedan"
+                  description: "A stylish sedan car"
+                  finance_fee: 2000
+                  purchase_fee: 25000
+                  amount_payable: 27500
+                  duration: "36 months"
+                  apr: "3.5%"
+
+    post:
+      summary: create car
+      tags:
+        - Car
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                photo:
+                  type: string
+                model:
+                  type: string
+                description:
+                  type: string
+                finance_fee:
+                  type: integer
+                purchase_fee:
+                  type: integer
+                amount_payable:
+                  type: integer
+                duration:
+                  type: string
+                apr:
+                  type: string
+              required:
+                - photo
+                - model
+                - description
+                - finance_fee
+                - purchase_fee
+                - amount_payable
+                - duration
+                - apr
+            example:
+              photo: "car1.jpg"
+              model: "Sedan"
+              description: "A stylish sedan car"
+              finance_fee: 2000
+              purchase_fee: 25000
+              amount_payable: 27500
+              duration: "36 months"
+              apr: "3.5%"
+      responses:
+        "200":
+          description: successful
+          content:
+            application/json:
+              example:
+                id: 1
+                photo: "car1.jpg"
+                model: "Sedan"
+                description: "A stylish sedan car"
+                finance_fee: 2000
+                purchase_fee: 25000
+                amount_payable: 27500
+                duration: "36 months"
+                apr: "3.5%"
+
+  "/api/v1/cars/{id}":
+    parameters:
+      - name: id
+        in: path
+        description: id
+        required: true
+        schema:
+          type: string
+    get:
+      summary: show car
+      tags:
+        - Car
+      responses:
+        "200":
+          description: successful
+          content:
+            application/json:
+              example:
+                id: 1
+                photo: "car1.jpg"
+                model: "Sedan"
+                description: "A stylish sedan car"
+                finance_fee: 2000
+                purchase_fee: 25000
+                amount_payable: 27500
+                duration: "36 months"
+                apr: "3.5%"
+
+    delete:
+      summary: delete car
+      tags:
+        - Car
+      responses:
+        "200":
+          description: successful
+
+  "/api/v1/cars/{car_id}/reservations":
+    parameters:
+      - name: car_id
+        in: path
+        description: car_id
+        required: true
+        schema:
+          type: string
+    get:
+      summary: list reservations
+      tags:
+        - Reservation
+      security:
+        - BearerAuth: []
+      responses:
+        "200":
+          description: successful
+          content:
+            application/json:
+              example:
+                - id: 1
+                  date: "2023-12-15"
+                  city: "New York"
+                - id: 2
+                  date: "2023-12-20"
+                  city: "Los Angeles"
+
+    post:
+      summary: create reservation
+      tags:
+        - Reservation
+      security:
+        - BearerAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                date:
+                  type: string
+                  format: date
+                city:
+                  type: string
+              required:
+                - date
+                - city
+            example:
+              date: "2023-12-15"
+              city: "New York"
+      responses:
+        "200":
+          description: successful
+          content:
+            application/json:
+              example:
+                id: 1
+                date: "2023-12-15"
+                city: "New York"
+
+  "/api/v1/cars/{car_id}/reservations/{id}":
+    parameters:
+      - name: car_id
+        in: path
+        description: car_id
+        required: true
+        schema:
+          type: string
+      - name: id
+        in: path
+        description: id
+        required: true
+        schema:
+          type: string
+    delete:
+      summary: delete reservation
+      tags:
+        - Reservation
+      security:
+        - BearerAuth: []
+      responses:
+        "200":
+          description: successful
+
+  # "/users/cancel":
+  #   get:
+  #     summary: cancel registration
+  #     responses:
+  #       "200":
+  #         description: successful
+
+  "/users/sign_up":
+    post:
+      summary: new registration
+      tags:
+        - Sign up
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                email:
+                  type: string
+                  format: email
+                password:
+                  type: string
+              required:
+                - username
+                - email
+                - password
+            example:
+              username: "john_doe"
+              email: "john.doe@example.com"
+              password: "secure_password"
+      responses:
+        "200":
+          description: successful
+
+  # "/users/edit":
+  #   get:
+  #     summary: edit registration
+  #     responses:
+  #       "200":
+  #         description: successful
+
+  # "/users":
+  #   patch:
+  #     summary: update registration
+  #     security:
+  #       - BearerAuth: []
+  #     requestBody:
+  #       content:
+  #         application/json:
+  #           schema:
+  #             type: object
+  #             properties:
+  #               username:
+  #                 type: string
+  #               email:
+  #                 type: string
+  #                 format: email
+  #               password:
+  #                 type: string
+  #             required:
+  #               - username
+  #               - email
+  #               - password
+  #           example:
+  #             username: "john_doe"
+  #             email: "john.doe@example.com"
+  #             password: "new_secure_password"
+  #     responses:
+  #       "200":
+  #         description: successful
+
+  #   put:
+  #     summary: update registration
+  #     security:
+  #       - BearerAuth: []
+  #     requestBody:
+  #       content:
+  #         application/json:
+  #           schema:
+  #             type: object
+  #             properties:
+  #               username:
+  #                 type: string
+  #               email:
+  #                 type: string
+  #                 format: email
+  #               password:
+  #                 type: string
+  #             required:
+  #               - username
+  #               - email
+  #               - password
+  #           example:
+  #             username: "john_doe"
+  #             email: "john.doe@example.com"
+  #             password: "updated_secure_password"
+  #     responses:
+  #       "200":
+  #         description: successful
+
+  #   delete:
+  #     summary: delete registration
+  #     security:
+  #       - BearerAuth: []
+  #     responses:
+  #       "200":
+  #         description: successful
+
+  #   post:
+  #     summary: create registration
+  #     requestBody:
+  #       content:
+  #         application/json:
+  #           schema:
+  #             type: object
+  #             properties:
+  #               username:
+  #                 type: string
+  #               email:
+  #                 type: string
+  #                 format: email
+  #               password:
+  #                 type: string
+  #             required:
+  #               - username
+  #               - email
+  #               - password
+  #           example:
+  #             username: "john_doe"
+  #             email: "john.doe@example.com"
+  #             password: "secure_password"
+  #     responses:
+  #       "200":
+  #         description: successful
+
+  "/users/sign_in":
+    post:
+      summary: create session
+      tags:
+        - Sign in
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+              required:
+                - username
+            example:
+              username: "john"
+      responses:
+        "200":
+          description: successful
+
+  "/users/sign_out":
+    delete:
+      summary: delete session
+      tags:
+        - Sign out
+      security:
+        - BearerAuth: []
+      responses:
+        "200":
+          description: successful
+
+servers:
+  - url: https://final-capstone-project.onrender.com
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
