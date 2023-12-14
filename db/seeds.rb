@@ -11,6 +11,7 @@
 #   end
 
 user1 = User.create(username: 'user1', email: 'user1@example.com', password: 'password')
+admin1 = User.create(username: 'admin', email: 'admin@gmail.com ', password: 'password', role: 'admin')
 
 car1 = Car.create(
    user: user1,
