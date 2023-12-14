@@ -18,7 +18,7 @@ module Users
       resource = User.find_for_database_authentication(username: params[:user][:username])
       if resource&.valid_password?
         sign_in(resource)
-        render json: { message: 'Authentication successful' }
+        render json: { message: 'Authentication successful', user: resource }        
       else
         render json: { message: 'Invalid username or password' }, status: :unauthorized
       end
