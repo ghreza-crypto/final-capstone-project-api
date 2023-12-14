@@ -134,7 +134,7 @@ To run the project follow these steps :
    2. Run `bundle install`
    3. Remove config/master.key and config/credentials.yml.enc if they exist.
    4. Run `EDITOR="code --wait" rails credentials:edit`
-   5. Run `rails db:create db:migrate`
+   5. Run `rails db:create db:migrate db:seed`
    6. Run ```$ rails server```
    7. open your navigator
    8. Go to ```http://localhost:3000/```
