@@ -1,161 +1,175 @@
-<a name="Car Reservations App Backend"></a>
+<a name="readme-top"></a>
+
+<div align="center">
+  <br/>
+
+  <h3><b>TripTrek</b></h3>
+
+</div>
+
 
 # 📗 Table of Contents
 
 - [📗 Table of Contents](#-table-of-contents)
-- [📖 \[Car Reservations App Backend\] ](#-car-reservations-app-backend-)
+- [📖 TripTrek ](#-triptrek-)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
+  - [🚀 Live Demo](#-live-demo)
+  - [🚀 Video Demo](#-video-demo)
   - [💻 Getting Started ](#-getting-started-)
     - [Prerequisites](#prerequisites)
-    - [Tutorial ](#tutorial-)
+    - [Setup](#setup)
+    - [Usage](#usage)
     - [Run tests](#run-tests)
+    - [Deployment](#deployment)
   - [👥 Authors ](#-authors-)
   - [🔭 Future Features ](#-future-features-)
   - [🤝 Contributing ](#-contributing-)
   - [⭐️ Show your support ](#️-show-your-support-)
-  - [❓ FAQ ](#-faq-)
   - [🙏 Acknowledgments ](#-acknowledgments-)
+  - [❓ FAQ (OPTIONAL) ](#-faq-optional-)
   - [📝 License ](#-license-)
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [Car Reservations App Backend] <a name="about-project"></a>
+# 📖 TripTrek <a name="about-project"></a>
 
-Car Reservations App Backend is your one-stop solution for reserving cars online. Our platform seamlessly integrates the power of React on the frontend and Rails on the backend, providing users with a modern and efficient way to navigate the world of automobile transactions.
+TripTrek is an innovative car booking application designed to elevate your travel experience. With TripTrek, effortlessly reserve a vehicle for your journeys, whether it's a quick city escape or a scenic road trip. Our user-friendly platform ensures a seamless and convenient booking process, allowing you to choose from a diverse fleet of reliable vehicles. Experience the freedom of the open road as TripTrek takes care of the details, making your travel adventures memorable and stress-free. Embrace the joy of exploration with TripTrek – your trusted companion for every road ahead. 
+
+**TripTrek** 
 
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
 
+The following stacks were used
+
 <details>
-  <summary>Client</summary>
+  <summary>Technologies Used:</summary>
   <ul>
-    <li><a href="https://www.ruby-lang.org/en/">Ruby</a></li>
-    <li><a href="https://rubyonrails.org/">Ruby on Rails</a></li>
-    <li><a href="https://redux.js.org/introduction/installation">React-redux</a></li>
-    <li><a href="https://axios-http.com/docs/intro">axios</a></li>
+    <li>
+      Front-end:
+      <ul>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML">HTML</a></li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a></li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">JavaScript</a></li>
+        <li><a href="https://react-redux.js.org/">React Redux</a></li>
+        <li><a href="https://react.dev/">React</a></li>
+        <li><a href="https://webpack.js.org/">Webpack</a></li>
+      </ul>
+    </li>
+    <li>
+      Back-end:
+      <ul>
+        <li><a href="https://www.ruby-lang.org/en/">Ruby</a></li>
+        <li><a href="https://rubyonrails.org/">Rails</a></li>
+        <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
+      </ul>
+    </li>
   </ul>
 </details>
 
-<details>
-  <summary>Ruby on Rails</summary>
-  <ul>
-    <li><a href="https://guides.rubyonrails.org/getting_started.html#what-is-rails-questionmark">Ruby on Rails introduction</a></li>
-  </ul>
-</details>
 
-<details>
-  <summary>Server</summary>
-  <ul>
-    <li><a href="">N/A</a></li>
-  </ul>
-</details>
-
-<details>
-<summary>Database</summary>
-  <ul>
-    <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
-  </ul>
-</details>
 
 <!-- Features -->
 
 ### Key Features <a name="key-features"></a>
 
-- **ROR**
-- **Devise**
-- **cancancan**
-- **Rspec**
-- **Capybara**
-- **React-redux**
-- **axios**
-- **React**
-- **Redux**
+- **User Registration**
+- **Car Booking**
+- **Reserve a car**
+- **Responsive Design**
+- **Car Fleet Information**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## 💻 Getting Started <a name="getting-started"></a>
+## 🚀 Live Demo 
+<a name="live-demo" href="#">Demo(not available)</a>
 
-To get a local copy of this project and run it in your computer, follow these steps.
+## 🚀 Video Demo 
+<a name="live-demo" href="#">Video(not available)</a>
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- GETTING STARTED -->
+
+## 💻 Getting Started <a name="getting-started"></a>
 
 ### Prerequisites
 
-In order to run this project you need:
-
-- Ruby 3.0.1 or above
-- Ruby on rails 7.0.8 or above
-- node and yarn installed on your system.
-- npx version 7.1.0 or later.
-
-### Tutorial <a name="tutorial"></a>
-
-To create this project run the following command:
-
-```
-rails new -j webpack hello-rails-react -d postgresql
-```
-
-run the following line to instal react-router-dom
-
-```
-By that point you should have rails react correctly setup.
-To run the project, run
-
-For installing react-redux, @reduxjs/toolkit and axios, run the following:
-
-```
-
-npm install react-redux
-npm install @reduxjs/toolkit
-npm install axios
-
-```
-
-Then, customize as you like to follow your requirements
+In order to run this project you need to have 
+- a browser and a code editor
+- `Node.js` and `npm` on your computer.
+- installed and configured ruby in your local environment:
+- setup Postgres database
 
 ### Setup
 
-To get a local copy up and running follow these simple example steps.
+Clone these repositories to your desired folder:
 
-Clone this repository in the desired folder:
+<!--
+Example commands:
+
+```sh
+  cd my-folder
+  git clone https://github.com/devalibello/final-capstone-project.git
+  git clone https://github.com/devalibello/final-capstone-project-api.git
 ```
-
-cd Car-Rent-App-Backend
-git clone https://github.com/devalibello/final-capstone-project-api.git
-
+ 
+--->
+Before to run the program, verify that you have Ruby installed on your OS running the following command:
+<!--
+```sh
+   ruby -v
 ```
+--->
 
-### Install
-
-To install this project:
-```
-
-cd Car-Rent-App-Backend
-code .
-bundle install
-
-````
 ### Usage
 
-To run the project, make sure you configured your database correctly, then execute the following command:
-```sh
-  rails db:create
-  rails db:migrate
-  rails db:seed
-````
-
-In one, run:
-rails server
-
-Then check the link of the rails server (it should have changed to http://localhost:3000/)
+To run the project follow these steps :
+1. Run the server :
+   1. Open your terminal and navigate to the root directory of your project
+   2. Run `bundle install`
+   3. Run `EDITOR="code --wait" rails credentials:edit`
+   4. Run `rails db:create db:migrate`
+   5. Run ```$ rails server```
+   6. open your navigator
+   7. Go to ```http://localhost:3000/```
+   8. If you receive an authentication error
+   9. Delete your `credential.yml` file
+   10. Run `rails credentials:edit`
+   11. Run ```$ rails server``` again
+2. Run the front-end :
+   1. Run the command ```$npm start ``` in your terminal.
+   2. Your default browser should open automatically and display your React app
 
 ### Run tests
 
-Not implemented tests
+If you follow the tutorial above to setup linters then you can run these tests
 
-<p align="right">(<a href="#hello--rails-react">back to top</a>)</p>
+```$
+  npx hint .
+```
+```$
+  npx stylelint "**/*.scss"
+```
+```$
+  rubocop
+```
+
+or if you use css then run this instead of the latter command above
+
+```$
+  npx stylelint "**/*.{css,scss}"
+```
+
+### Deployment
+
+You can deploy this project using: GitHub Pages Netifly or Render 
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- AUTHORS -->
 
@@ -172,67 +186,62 @@ Not implemented tests
 - GitHub: [@Benson](https://github.com/BenMKT)
 - LinkedIn: [Ben](https://www.linkedin.com/in/bensonkiai)
 
-<p align="right">(<a href="#hello--rails-react">back to top</a>)</p>
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- Nothing so far
 
-<p align="right">(<a href="#hello--rails-react">back to top</a>)</p>
+- [ ] **Profile management**
+- [ ] **Deployment**
+- [ ] **Payment Integration**
+- [ ] **Reviews and Ratings**
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- CONTRIBUTING -->
 
 ## 🤝 Contributing <a name="contributing"></a>
 
-I welcome contributions to enhance the functionality and user experience of the Car Reservations project. If you have any ideas, suggestions, or bug reports, feel free to open an issue or submit a pull request.
-
-If you'd like to contribute to this project, please follow these steps:
-
-1. Fork the repository.
-2. Create a new branch for your feature or bug fix.
-3. Make your changes and commit them with descriptive commit messages.
-4. Push your changes to your forked repository.
-5. Submit a pull request to the main repository, explaining your changes in detail.
-
-Please adhere to the coding conventions and guidelines specified in the project.
-
 Contributions, issues, and feature requests are welcome!
+
 Feel free to check the [issues page](https://github.com/devalibello/final-capstone-project-api/issues).
 
-<p align="right">(<a href="#hello--rails-react">back to top</a>)</p>
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- SUPPORT -->
 
 ## ⭐️ Show your support <a name="support"></a>
 
-If you like this project give it a star ⭐️
+If you like this project you can follow me on github for more.
 
-<p align="right">(<a href="#hello--rails-react">back to top</a>)</p>
-
-<!-- FAQ -->
-
-## ❓ FAQ <a name="faq"></a>
-
-- **Can I use the project for any purpose?**
-
-  - Yes, you can use this files for anything you need
-
-- **Do I need to ask for permission?**
-
-  - No need to ask for permission.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- ACKNOWLEDGEMENTS -->
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-** I would like to thank Microverse **
+thanks to Microverse for providing the necessary resources.
+And special thanks to <a href='https://www.behance.net/gallery/26425031/Vespa-Responsive-Redesign' target="_blank">Murat Korkmaz </a> the author of the original design
 
-<p align="right">(<a href="#hello--rails-react">back to top</a>)</p>
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+## ❓ FAQ (OPTIONAL) <a name="faq"></a>
+
+- **Are the linters necessary?**
+
+  - It is a good practice to install and use them as they guide you towards best practice, but yes you can do without. 
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LICENSE -->
 
 ## 📝 License <a name="license"></a>
 
 This project is [MIT](./LICENSE) licensed.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
